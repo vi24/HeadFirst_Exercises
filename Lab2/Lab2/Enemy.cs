@@ -9,7 +9,7 @@ namespace Lab2
 {
     abstract class Enemy : Mover
     {
-        private const int NearPlayerDistance = 25;
+        private const int NEAR_PLAYER_DISTANCE = 25;
         public int HitPoints { get; private set; }
         public bool Dead
         {
@@ -28,7 +28,7 @@ namespace Lab2
         }
         protected bool NearPlayer()
         {
-            return (Nearby(game.PlayerLocation, NearPlayerDistance));
+            return (Nearby(game.PlayerLocation, NEAR_PLAYER_DISTANCE));
         }
         protected Direction FindPlayerDirection(Point playerLocation)
         {

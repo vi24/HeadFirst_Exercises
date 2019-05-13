@@ -9,7 +9,10 @@ namespace Lab2
 {
     class Ghost : Enemy
     {
-        public Ghost (Game game, Point location): base(game, location, 8)
+        private const int HIT_POINTS = 8;
+        private const int MAX_DAMAGE = 3;
+
+        public Ghost (Game game, Point location): base(game, location, HIT_POINTS)
         {}
 
         public override void Move(Random random)
@@ -30,7 +33,7 @@ namespace Lab2
                 }
                 if (NearPlayer())
                 {
-                    Hit(3, random);
+                    Hit(MAX_DAMAGE, random);
                 }
             }
         }

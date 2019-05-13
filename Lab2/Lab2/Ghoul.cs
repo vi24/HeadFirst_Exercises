@@ -9,7 +9,10 @@ namespace Lab2
 {
     class Ghoul : Enemy
     {
-        public Ghoul (Game game, Point location): base(game, location, 10)
+        private const int HIT_POINTS = 10;
+        private const int MAX_DAMAGE = 4;
+
+        public Ghoul (Game game, Point location): base(game, location, HIT_POINTS)
         {}
         public override void Move(Random random)
         {
@@ -30,7 +33,7 @@ namespace Lab2
                 }
                 if (NearPlayer())
                 {
-                    Hit(4, random);
+                    Hit(MAX_DAMAGE, random);
                 }
             }
         }

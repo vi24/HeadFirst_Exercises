@@ -10,6 +10,9 @@ namespace Lab2
 {
     class Sword : Weapon
     {
+        private const int RADIUS = 10;
+        private const int DAMAGE = 3;
+
         public Sword(Game game, Point location): base(game, location)
         {}
 
@@ -23,44 +26,11 @@ namespace Lab2
 
         public override void Attack(Direction direction, Random random)
         {
-            bool enemyHit = false;
-            Direction clockWiseDirection;
-            Direction counterClockWiseDirection;
-
-            switch (direction)
+            if (!DamageEnemy(direction, RADIUS, DAMAGE, random))
             {
-                case Direction.Up:
-                    clockWiseDirection = Direction.Right;
-                    counterClockWiseDirection = Direction.Down;
-                    break;
-                case Direction.Down:
-                    clockWiseDirection = Direction.Left;
-                    counterClockWiseDirection = Direction.Up;
-                    break;
-                case Direction.Left:
-                    clockWiseDirection = Direction.Up;
-                    counterClockWiseDirection = Direction.Right;
-                    break;
-                case Direction.Right:
-                    clockWiseDirection = Direction.Down;
-                    counterClockWiseDirection = Direction.Left;
-                    break;
-                default:
-                    clockWiseDirection = direction;
-                    counterClockWiseDirection = direction;
-                    break;
-            }
-
-            if (!enemyHit)
-            {
-                enemyHit = DamageEnemy(direction, 10, 3, random);
-                if (!enemyHit)
+                if (!DamageEnemy(ClockWiseDirection(direction), RADIUS, DAMAGE, random))
                 {
-                    enemyHit = DamageEnemy(clockWiseDirection, 10, 3, random);
-                    if (!enemyHit)
-                    {
-                        DamageEnemy(counterClockWiseDirection, 10, 3, random);
-                    }
+                    DamageEnemy(CounterClockWiseDirection(direction), RADIUS, DAMAGE, random);
                 }
             }
         }

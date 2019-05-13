@@ -47,5 +47,55 @@ namespace Lab2
             location = target;
             return Move(direction, boundaries);
         }
+
+        public Direction CounterClockWiseDirection(Direction direction)
+        {
+            Direction counterClockWiseDirection;
+
+            switch (direction)
+            {
+                case Direction.Up:
+                    counterClockWiseDirection = Direction.Left;
+                    break;
+                case Direction.Down:
+                    counterClockWiseDirection = Direction.Right;
+                    break;
+                case Direction.Left:
+                    counterClockWiseDirection = Direction.Down;
+                    break;
+                case Direction.Right:
+                    counterClockWiseDirection = Direction.Up;
+                    break;
+                default:
+                    counterClockWiseDirection = direction;
+                    break;
+            }
+            return counterClockWiseDirection;
+        }
+
+        public Direction ClockWiseDirection(Direction direction)
+        {
+            Direction clockWiseDirection;
+
+            switch (direction)
+            {
+                case Direction.Up:
+                    clockWiseDirection = Direction.Right;
+                    break;
+                case Direction.Down:
+                    clockWiseDirection = Direction.Left;
+                    break;
+                case Direction.Left:
+                    clockWiseDirection = Direction.Up;
+                    break;
+                case Direction.Right:
+                    clockWiseDirection = Direction.Down;
+                    break;
+                default:
+                    clockWiseDirection = direction;
+                    break;
+            }
+            return clockWiseDirection;
+        }
     }
 }

@@ -9,7 +9,7 @@ namespace Lab2
 {
     abstract class Mover
     {
-        private const int MoveInterval = 10;
+        private const int MOVE_INTERVAL = 10;
         protected Point location;
         public Point Location { get { return location; } }
         protected Game game;
@@ -36,20 +36,20 @@ namespace Lab2
             switch (direction)
             {
                 case Direction.Up:
-                    if (newLocation.Y - MoveInterval >= boundaries.Top)
-                        newLocation.Y -= MoveInterval;
+                    if (newLocation.Y - MOVE_INTERVAL >= boundaries.Top)
+                        newLocation.Y -= MOVE_INTERVAL;
                     break;
                 case Direction.Down:
-                    if (newLocation.Y + MoveInterval <= boundaries.Bottom)
-                        newLocation.Y += MoveInterval;
+                    if (newLocation.Y + MOVE_INTERVAL <= boundaries.Bottom)
+                        newLocation.Y += MOVE_INTERVAL;
                     break;
                 case Direction.Left:
-                    if (newLocation.X - MoveInterval >= boundaries.Left)
-                        newLocation.X -= MoveInterval;
+                    if (newLocation.X - MOVE_INTERVAL >= boundaries.Left)
+                        newLocation.X -= MOVE_INTERVAL;
                     break;
                 case Direction.Right:
-                    if (newLocation.X + MoveInterval <= boundaries.Right)
-                        newLocation.X += MoveInterval;
+                    if (newLocation.X + MOVE_INTERVAL <= boundaries.Right)
+                        newLocation.X += MOVE_INTERVAL;
                     break;
                 default: break;
             }

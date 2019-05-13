@@ -9,6 +9,9 @@ namespace Lab2
 {
     class Mace : Weapon
     {
+        private const int RADIUS = 20;
+        private const int DAMAGE = 6;
+
         public Mace(Game game, Point location) : base(game, location)
         {}
 
@@ -23,7 +26,14 @@ namespace Lab2
 
         public override void Attack(Direction direction, Random random)
         {
-            throw new NotImplementedException();
+            int i = 0;
+            bool enemyHit = false;
+            do
+            {
+                enemyHit = DamageEnemy(direction, RADIUS, DAMAGE, random);
+                direction = CounterClockWiseDirection(direction);
+                i++;
+            } while (i < 4 && !enemyHit);
         }
     }
 }

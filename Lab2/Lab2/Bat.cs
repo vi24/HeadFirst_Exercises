@@ -9,7 +9,10 @@ namespace Lab2
 {
     class Bat : Enemy
     {
-        public Bat(Game game, Point location): base(game, location, 6)
+        private const int HIT_POINTS = 6;
+        private const int MAX_DAMAGE = 2;
+
+        public Bat(Game game, Point location): base(game, location, HIT_POINTS)
         {}
         public override void Move(Random random)
         {
@@ -27,7 +30,7 @@ namespace Lab2
                 }
                 if (NearPlayer())
                 {
-                    Hit(2, random);
+                    Hit(MAX_DAMAGE, random);
                 }
             }
         }
