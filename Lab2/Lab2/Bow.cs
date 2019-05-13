@@ -10,9 +10,7 @@ namespace Lab2
     class Bow : Weapon
     {
         public Bow(Game game, Point location): base(game, location)
-        {
-            throw new NotImplementedException();
-        }
+        {}
         public override string Name
         {
             get
@@ -23,7 +21,7 @@ namespace Lab2
 
         public override void Attack(Direction direction, Random random)
         {
-            throw new NotImplementedException();
+            DamageEnemy(direction, 30, 1, random);
         }
     }
 }

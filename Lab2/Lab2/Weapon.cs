@@ -31,7 +31,7 @@ namespace Lab2
                         return true;
                     }
                 }
-                target = Move(direction, target, game.Boundaries);
+                //target = Move(direction, target, game.Boundaries);
             }
             return false;
         }

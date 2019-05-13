@@ -10,9 +10,7 @@ namespace Lab2
     class Mace : Weapon
     {
         public Mace(Game game, Point location) : base(game, location)
-        {
-            throw new NotImplementedException();
-        }
+        {}
 
         public override string Name
         {
