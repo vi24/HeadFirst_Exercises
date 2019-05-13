@@ -34,8 +34,24 @@
             this.PotionBlueInventoryPicBox = new System.Windows.Forms.PictureBox();
             this.PotionRedInventoryPicBox = new System.Windows.Forms.PictureBox();
             this.MoveGroupBox = new System.Windows.Forms.GroupBox();
+            this.UpMoveButton = new System.Windows.Forms.Button();
+            this.RightMoveButton = new System.Windows.Forms.Button();
+            this.DownMoveButton = new System.Windows.Forms.Button();
+            this.LeftMoveButton = new System.Windows.Forms.Button();
             this.AttackGroupBox = new System.Windows.Forms.GroupBox();
+            this.DownAttackButton = new System.Windows.Forms.Button();
+            this.RightAttackButton = new System.Windows.Forms.Button();
+            this.UpAttackButton = new System.Windows.Forms.Button();
+            this.LeftAttackButton = new System.Windows.Forms.Button();
             this.HitPointsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.GhoulLabel = new System.Windows.Forms.Label();
+            this.GhoulHitPointsLabel = new System.Windows.Forms.Label();
+            this.GhostLabel = new System.Windows.Forms.Label();
+            this.GhostHitPointsLabel = new System.Windows.Forms.Label();
+            this.BatHitPointsLabel = new System.Windows.Forms.Label();
+            this.PlayerHitPointsLabel = new System.Windows.Forms.Label();
+            this.BatLabel = new System.Windows.Forms.Label();
+            this.PlayerLabel = new System.Windows.Forms.Label();
             this.PlayerPicBox = new System.Windows.Forms.PictureBox();
             this.BatPicBox = new System.Windows.Forms.PictureBox();
             this.GhostPicBox = new System.Windows.Forms.PictureBox();
@@ -45,22 +61,6 @@
             this.SwordPicBox = new System.Windows.Forms.PictureBox();
             this.BowPicBox = new System.Windows.Forms.PictureBox();
             this.MacePicBox = new System.Windows.Forms.PictureBox();
-            this.LeftMoveButton = new System.Windows.Forms.Button();
-            this.DownMoveButton = new System.Windows.Forms.Button();
-            this.RightMoveButton = new System.Windows.Forms.Button();
-            this.UpMoveButton = new System.Windows.Forms.Button();
-            this.LeftAttackButton = new System.Windows.Forms.Button();
-            this.UpAttackButton = new System.Windows.Forms.Button();
-            this.RightAttackButton = new System.Windows.Forms.Button();
-            this.DownAttackButton = new System.Windows.Forms.Button();
-            this.PlayerLabel = new System.Windows.Forms.Label();
-            this.PlayerHitPointsLabel = new System.Windows.Forms.Label();
-            this.BatLabel = new System.Windows.Forms.Label();
-            this.BatHitPointsLabel = new System.Windows.Forms.Label();
-            this.GhostHitPointsLabel = new System.Windows.Forms.Label();
-            this.GhostLabel = new System.Windows.Forms.Label();
-            this.GhoulHitPointsLabel = new System.Windows.Forms.Label();
-            this.GhoulLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.SwordInventoryPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BowInventoryPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaceInventoryPicBox)).BeginInit();
@@ -150,6 +150,42 @@
             this.MoveGroupBox.TabStop = false;
             this.MoveGroupBox.Text = "Move";
             // 
+            // UpMoveButton
+            // 
+            this.UpMoveButton.Location = new System.Drawing.Point(36, 19);
+            this.UpMoveButton.Name = "UpMoveButton";
+            this.UpMoveButton.Size = new System.Drawing.Size(48, 23);
+            this.UpMoveButton.TabIndex = 20;
+            this.UpMoveButton.Text = "↑";
+            this.UpMoveButton.UseVisualStyleBackColor = true;
+            // 
+            // RightMoveButton
+            // 
+            this.RightMoveButton.Location = new System.Drawing.Point(72, 48);
+            this.RightMoveButton.Name = "RightMoveButton";
+            this.RightMoveButton.Size = new System.Drawing.Size(48, 23);
+            this.RightMoveButton.TabIndex = 19;
+            this.RightMoveButton.Text = "→";
+            this.RightMoveButton.UseVisualStyleBackColor = true;
+            // 
+            // DownMoveButton
+            // 
+            this.DownMoveButton.Location = new System.Drawing.Point(36, 77);
+            this.DownMoveButton.Name = "DownMoveButton";
+            this.DownMoveButton.Size = new System.Drawing.Size(48, 23);
+            this.DownMoveButton.TabIndex = 18;
+            this.DownMoveButton.Text = "↓";
+            this.DownMoveButton.UseVisualStyleBackColor = true;
+            // 
+            // LeftMoveButton
+            // 
+            this.LeftMoveButton.Location = new System.Drawing.Point(0, 48);
+            this.LeftMoveButton.Name = "LeftMoveButton";
+            this.LeftMoveButton.Size = new System.Drawing.Size(48, 23);
+            this.LeftMoveButton.TabIndex = 17;
+            this.LeftMoveButton.Text = "←";
+            this.LeftMoveButton.UseVisualStyleBackColor = true;
+            // 
             // AttackGroupBox
             // 
             this.AttackGroupBox.BackColor = System.Drawing.Color.Transparent;
@@ -163,6 +199,42 @@
             this.AttackGroupBox.TabIndex = 6;
             this.AttackGroupBox.TabStop = false;
             this.AttackGroupBox.Text = "Attack";
+            // 
+            // DownAttackButton
+            // 
+            this.DownAttackButton.Location = new System.Drawing.Point(34, 77);
+            this.DownAttackButton.Name = "DownAttackButton";
+            this.DownAttackButton.Size = new System.Drawing.Size(48, 23);
+            this.DownAttackButton.TabIndex = 24;
+            this.DownAttackButton.Text = "↓";
+            this.DownAttackButton.UseVisualStyleBackColor = true;
+            // 
+            // RightAttackButton
+            // 
+            this.RightAttackButton.Location = new System.Drawing.Point(72, 48);
+            this.RightAttackButton.Name = "RightAttackButton";
+            this.RightAttackButton.Size = new System.Drawing.Size(48, 23);
+            this.RightAttackButton.TabIndex = 23;
+            this.RightAttackButton.Text = "→";
+            this.RightAttackButton.UseVisualStyleBackColor = true;
+            // 
+            // UpAttackButton
+            // 
+            this.UpAttackButton.Location = new System.Drawing.Point(34, 19);
+            this.UpAttackButton.Name = "UpAttackButton";
+            this.UpAttackButton.Size = new System.Drawing.Size(48, 23);
+            this.UpAttackButton.TabIndex = 22;
+            this.UpAttackButton.Text = "↑";
+            this.UpAttackButton.UseVisualStyleBackColor = true;
+            // 
+            // LeftAttackButton
+            // 
+            this.LeftAttackButton.Location = new System.Drawing.Point(0, 48);
+            this.LeftAttackButton.Name = "LeftAttackButton";
+            this.LeftAttackButton.Size = new System.Drawing.Size(48, 23);
+            this.LeftAttackButton.TabIndex = 21;
+            this.LeftAttackButton.Text = "←";
+            this.LeftAttackButton.UseVisualStyleBackColor = true;
             // 
             // HitPointsTableLayoutPanel
             // 
@@ -188,6 +260,78 @@
             this.HitPointsTableLayoutPanel.Size = new System.Drawing.Size(199, 84);
             this.HitPointsTableLayoutPanel.TabIndex = 7;
             // 
+            // GhoulLabel
+            // 
+            this.GhoulLabel.AutoSize = true;
+            this.GhoulLabel.Location = new System.Drawing.Point(3, 60);
+            this.GhoulLabel.Name = "GhoulLabel";
+            this.GhoulLabel.Size = new System.Drawing.Size(35, 13);
+            this.GhoulLabel.TabIndex = 7;
+            this.GhoulLabel.Text = "Ghoul";
+            // 
+            // GhoulHitPointsLabel
+            // 
+            this.GhoulHitPointsLabel.AutoSize = true;
+            this.GhoulHitPointsLabel.Location = new System.Drawing.Point(102, 60);
+            this.GhoulHitPointsLabel.Name = "GhoulHitPointsLabel";
+            this.GhoulHitPointsLabel.Size = new System.Drawing.Size(75, 13);
+            this.GhoulHitPointsLabel.TabIndex = 6;
+            this.GhoulHitPointsLabel.Text = "ghoulHitPoints";
+            // 
+            // GhostLabel
+            // 
+            this.GhostLabel.AutoSize = true;
+            this.GhostLabel.Location = new System.Drawing.Point(3, 38);
+            this.GhostLabel.Name = "GhostLabel";
+            this.GhostLabel.Size = new System.Drawing.Size(35, 13);
+            this.GhostLabel.TabIndex = 5;
+            this.GhostLabel.Text = "Ghost";
+            // 
+            // GhostHitPointsLabel
+            // 
+            this.GhostHitPointsLabel.AutoSize = true;
+            this.GhostHitPointsLabel.Location = new System.Drawing.Point(102, 38);
+            this.GhostHitPointsLabel.Name = "GhostHitPointsLabel";
+            this.GhostHitPointsLabel.Size = new System.Drawing.Size(75, 13);
+            this.GhostHitPointsLabel.TabIndex = 4;
+            this.GhostHitPointsLabel.Text = "ghostHitPoints";
+            // 
+            // BatHitPointsLabel
+            // 
+            this.BatHitPointsLabel.AutoSize = true;
+            this.BatHitPointsLabel.Location = new System.Drawing.Point(102, 21);
+            this.BatHitPointsLabel.Name = "BatHitPointsLabel";
+            this.BatHitPointsLabel.Size = new System.Drawing.Size(64, 13);
+            this.BatHitPointsLabel.TabIndex = 3;
+            this.BatHitPointsLabel.Text = "batHitPoints";
+            // 
+            // PlayerHitPointsLabel
+            // 
+            this.PlayerHitPointsLabel.AutoSize = true;
+            this.PlayerHitPointsLabel.Location = new System.Drawing.Point(102, 0);
+            this.PlayerHitPointsLabel.Name = "PlayerHitPointsLabel";
+            this.PlayerHitPointsLabel.Size = new System.Drawing.Size(77, 13);
+            this.PlayerHitPointsLabel.TabIndex = 1;
+            this.PlayerHitPointsLabel.Text = "playerHitPoints";
+            // 
+            // BatLabel
+            // 
+            this.BatLabel.AutoSize = true;
+            this.BatLabel.Location = new System.Drawing.Point(3, 21);
+            this.BatLabel.Name = "BatLabel";
+            this.BatLabel.Size = new System.Drawing.Size(23, 13);
+            this.BatLabel.TabIndex = 2;
+            this.BatLabel.Text = "Bat";
+            // 
+            // PlayerLabel
+            // 
+            this.PlayerLabel.AutoSize = true;
+            this.PlayerLabel.Location = new System.Drawing.Point(3, 0);
+            this.PlayerLabel.Name = "PlayerLabel";
+            this.PlayerLabel.Size = new System.Drawing.Size(36, 13);
+            this.PlayerLabel.TabIndex = 0;
+            this.PlayerLabel.Text = "Player";
+            // 
             // PlayerPicBox
             // 
             this.PlayerPicBox.BackColor = System.Drawing.Color.Transparent;
@@ -199,7 +343,6 @@
             this.PlayerPicBox.TabIndex = 8;
             this.PlayerPicBox.TabStop = false;
             this.PlayerPicBox.Visible = false;
-            this.PlayerPicBox.Click += new System.EventHandler(this.PictureBox6_Click);
             // 
             // BatPicBox
             // 
@@ -297,150 +440,6 @@
             this.MacePicBox.TabStop = false;
             this.MacePicBox.Visible = false;
             // 
-            // LeftMoveButton
-            // 
-            this.LeftMoveButton.Location = new System.Drawing.Point(0, 48);
-            this.LeftMoveButton.Name = "LeftMoveButton";
-            this.LeftMoveButton.Size = new System.Drawing.Size(48, 23);
-            this.LeftMoveButton.TabIndex = 17;
-            this.LeftMoveButton.Text = "←";
-            this.LeftMoveButton.UseVisualStyleBackColor = true;
-            // 
-            // DownMoveButton
-            // 
-            this.DownMoveButton.Location = new System.Drawing.Point(36, 77);
-            this.DownMoveButton.Name = "DownMoveButton";
-            this.DownMoveButton.Size = new System.Drawing.Size(48, 23);
-            this.DownMoveButton.TabIndex = 18;
-            this.DownMoveButton.Text = "↓";
-            this.DownMoveButton.UseVisualStyleBackColor = true;
-            // 
-            // RightMoveButton
-            // 
-            this.RightMoveButton.Location = new System.Drawing.Point(72, 48);
-            this.RightMoveButton.Name = "RightMoveButton";
-            this.RightMoveButton.Size = new System.Drawing.Size(48, 23);
-            this.RightMoveButton.TabIndex = 19;
-            this.RightMoveButton.Text = "→";
-            this.RightMoveButton.UseVisualStyleBackColor = true;
-            // 
-            // UpMoveButton
-            // 
-            this.UpMoveButton.Location = new System.Drawing.Point(36, 19);
-            this.UpMoveButton.Name = "UpMoveButton";
-            this.UpMoveButton.Size = new System.Drawing.Size(48, 23);
-            this.UpMoveButton.TabIndex = 20;
-            this.UpMoveButton.Text = "↑";
-            this.UpMoveButton.UseVisualStyleBackColor = true;
-            // 
-            // LeftAttackButton
-            // 
-            this.LeftAttackButton.Location = new System.Drawing.Point(0, 48);
-            this.LeftAttackButton.Name = "LeftAttackButton";
-            this.LeftAttackButton.Size = new System.Drawing.Size(48, 23);
-            this.LeftAttackButton.TabIndex = 21;
-            this.LeftAttackButton.Text = "←";
-            this.LeftAttackButton.UseVisualStyleBackColor = true;
-            // 
-            // UpAttackButton
-            // 
-            this.UpAttackButton.Location = new System.Drawing.Point(34, 19);
-            this.UpAttackButton.Name = "UpAttackButton";
-            this.UpAttackButton.Size = new System.Drawing.Size(48, 23);
-            this.UpAttackButton.TabIndex = 22;
-            this.UpAttackButton.Text = "↑";
-            this.UpAttackButton.UseVisualStyleBackColor = true;
-            // 
-            // RightAttackButton
-            // 
-            this.RightAttackButton.Location = new System.Drawing.Point(72, 48);
-            this.RightAttackButton.Name = "RightAttackButton";
-            this.RightAttackButton.Size = new System.Drawing.Size(48, 23);
-            this.RightAttackButton.TabIndex = 23;
-            this.RightAttackButton.Text = "→";
-            this.RightAttackButton.UseVisualStyleBackColor = true;
-            // 
-            // DownAttackButton
-            // 
-            this.DownAttackButton.Location = new System.Drawing.Point(34, 77);
-            this.DownAttackButton.Name = "DownAttackButton";
-            this.DownAttackButton.Size = new System.Drawing.Size(48, 23);
-            this.DownAttackButton.TabIndex = 24;
-            this.DownAttackButton.Text = "↓";
-            this.DownAttackButton.UseVisualStyleBackColor = true;
-            // 
-            // PlayerLabel
-            // 
-            this.PlayerLabel.AutoSize = true;
-            this.PlayerLabel.Location = new System.Drawing.Point(3, 0);
-            this.PlayerLabel.Name = "PlayerLabel";
-            this.PlayerLabel.Size = new System.Drawing.Size(36, 13);
-            this.PlayerLabel.TabIndex = 0;
-            this.PlayerLabel.Text = "Player";
-            // 
-            // PlayerHitPointsLabel
-            // 
-            this.PlayerHitPointsLabel.AutoSize = true;
-            this.PlayerHitPointsLabel.Location = new System.Drawing.Point(102, 0);
-            this.PlayerHitPointsLabel.Name = "PlayerHitPointsLabel";
-            this.PlayerHitPointsLabel.Size = new System.Drawing.Size(77, 13);
-            this.PlayerHitPointsLabel.TabIndex = 1;
-            this.PlayerHitPointsLabel.Text = "playerHitPoints";
-            // 
-            // BatLabel
-            // 
-            this.BatLabel.AutoSize = true;
-            this.BatLabel.Location = new System.Drawing.Point(3, 21);
-            this.BatLabel.Name = "BatLabel";
-            this.BatLabel.Size = new System.Drawing.Size(23, 13);
-            this.BatLabel.TabIndex = 2;
-            this.BatLabel.Text = "Bat";
-            // 
-            // BatHitPointsLabel
-            // 
-            this.BatHitPointsLabel.AutoSize = true;
-            this.BatHitPointsLabel.Location = new System.Drawing.Point(102, 21);
-            this.BatHitPointsLabel.Name = "BatHitPointsLabel";
-            this.BatHitPointsLabel.Size = new System.Drawing.Size(64, 13);
-            this.BatHitPointsLabel.TabIndex = 3;
-            this.BatHitPointsLabel.Text = "batHitPoints";
-            // 
-            // GhostHitPointsLabel
-            // 
-            this.GhostHitPointsLabel.AutoSize = true;
-            this.GhostHitPointsLabel.Location = new System.Drawing.Point(102, 38);
-            this.GhostHitPointsLabel.Name = "GhostHitPointsLabel";
-            this.GhostHitPointsLabel.Size = new System.Drawing.Size(75, 13);
-            this.GhostHitPointsLabel.TabIndex = 4;
-            this.GhostHitPointsLabel.Text = "ghostHitPoints";
-            // 
-            // GhostLabel
-            // 
-            this.GhostLabel.AutoSize = true;
-            this.GhostLabel.Location = new System.Drawing.Point(3, 38);
-            this.GhostLabel.Name = "GhostLabel";
-            this.GhostLabel.Size = new System.Drawing.Size(35, 13);
-            this.GhostLabel.TabIndex = 5;
-            this.GhostLabel.Text = "Ghost";
-            // 
-            // GhoulHitPointsLabel
-            // 
-            this.GhoulHitPointsLabel.AutoSize = true;
-            this.GhoulHitPointsLabel.Location = new System.Drawing.Point(102, 60);
-            this.GhoulHitPointsLabel.Name = "GhoulHitPointsLabel";
-            this.GhoulHitPointsLabel.Size = new System.Drawing.Size(75, 13);
-            this.GhoulHitPointsLabel.TabIndex = 6;
-            this.GhoulHitPointsLabel.Text = "ghoulHitPoints";
-            // 
-            // GhoulLabel
-            // 
-            this.GhoulLabel.AutoSize = true;
-            this.GhoulLabel.Location = new System.Drawing.Point(3, 60);
-            this.GhoulLabel.Name = "GhoulLabel";
-            this.GhoulLabel.Size = new System.Drawing.Size(35, 13);
-            this.GhoulLabel.TabIndex = 7;
-            this.GhoulLabel.Text = "Ghoul";
-            // 
             // TheQuestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -467,6 +466,7 @@
             this.Controls.Add(this.SwordPicBox);
             this.Name = "TheQuestForm";
             this.Text = "The Quest";
+            this.Load += new System.EventHandler(this.TheQuestForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.SwordInventoryPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BowInventoryPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaceInventoryPicBox)).EndInit();
