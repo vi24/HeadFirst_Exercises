@@ -9,6 +9,7 @@ namespace Lab2
 {
     abstract class Weapon : Mover
     {
+        private const int MOVE_INTERVAL = 10;
         public bool PickedUp { get; private set; }
         public Weapon(Game game, Point location) : base(game, location)
         {
@@ -31,21 +32,48 @@ namespace Lab2
                         return true;
                     }
                 }
-                //target = Move(direction, target, game.Boundaries);
+                target = Move(direction, target, game.Boundaries);
             }
             return false;
         }
 
         public bool Nearby(Point location, Point target, int distance)
         {
-            this.location = location;
-            return Nearby(target, distance);
+            if (Math.Abs(location.X - target.X) < distance &&
+            (Math.Abs(location.Y - target.Y) < distance))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public Point Move(Direction direction, Point target, Rectangle boundaries)
         {
-            location = target;
-            return Move(direction, boundaries);
+            Point newLocation = target;
+            switch (direction)
+            {
+                case Direction.Up:
+                    if (newLocation.Y - MOVE_INTERVAL >= boundaries.Top)
+                        newLocation.Y -= MOVE_INTERVAL;
+                    break;
+                case Direction.Down:
+                    if (newLocation.Y + MOVE_INTERVAL <= boundaries.Bottom)
+                        newLocation.Y += MOVE_INTERVAL;
+                    break;
+                case Direction.Left:
+                    if (newLocation.X - MOVE_INTERVAL >= boundaries.Left)
+                        newLocation.X -= MOVE_INTERVAL;
+                    break;
+                case Direction.Right:
+                    if (newLocation.X + MOVE_INTERVAL <= boundaries.Right)
+                        newLocation.X += MOVE_INTERVAL;
+                    break;
+                default: break;
+            }
+            return newLocation;
         }
 
         public Direction CounterClockWiseDirection(Direction direction)

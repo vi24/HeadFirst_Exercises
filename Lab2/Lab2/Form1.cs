@@ -26,13 +26,13 @@ namespace Lab2
 
         public void UpdateCharacters()
         {
-            PlayerPicBox.Location = game.PlayerLocation;
-            PlayerHitPointsLabel.Text =
-            game.PlayerHitPoints.ToString();
+            
             bool showBat = false;
             bool showGhost = false;
             bool showGhoul = false;
             int enemiesShown = 0;
+
+            UpdatePlayer();
 
             foreach (Enemy enemy in game.Enemies)
             {
@@ -70,79 +70,17 @@ namespace Lab2
                 }
             }
 
-            if (!showBat)
-            {
-                BatPicBox.Visible = false;
-                BatHitPointsLabel.Text = "";
-            }
-            else
-            {
-                BatPicBox.Visible = true;
-            }
+            SetEnemyVisibility(showBat, showGhost, showGhoul);
 
-            if (!showGhost)
-            {
-                GhostPicBox.Visible = false;
-                GhostHitPointsLabel.Text = "";
-            }
-            else
-            {
-                GhostPicBox.Visible = true;
-            }
-            if (!showGhoul)
-            {
-                GhoulPicBox.Visible = false;
-                GhoulHitPointsLabel.Text = "";
-            }
-            else
-            {
-                GhoulPicBox.Visible = true;
-            }
+            SetVisiblityPicBoxes();
 
-            SwordPicBox.Visible = false;
-            BowPicBox.Visible = false;
-            PotionRedPicBox.Visible = false;
-            PotionBluePicBox.Visible = false;
-            MacePicBox.Visible = false;
+            Control weaponControl = SetControlVisiblityPicBoxes();
 
-            Control weaponControl = null;
-            switch (game.WeaponInRoom.Name)
-            {
-                case "Sword":
-                    weaponControl = SwordPicBox; break;
-                case "Bow":
-                    weaponControl = BowPicBox; break;
-                case "Mace":
-                    weaponControl = MacePicBox; break;
-                case "Red Potion":
-                    weaponControl = PotionRedPicBox; break;
-                case "Blue Potion":
-                    weaponControl = PotionBluePicBox; break;
-            }
-            weaponControl.Visible = true;
+            SetVisibilityInventoryIcons();
 
-            SwordInventoryPicBox.Visible = game.CheckPlayerInventory("Sword");
-            BowInventoryPicBox.Visible = game.CheckPlayerInventory("Bow");
-            MaceInventoryPicBox.Visible = game.CheckPlayerInventory("Mace");
-            PotionBlueInventoryPicBox.Visible = game.CheckPlayerInventory("Blue Potion");
-            PotionRedInventoryPicBox.Visible = game.CheckPlayerInventory("Red Potion");
+            SetVisiblityPickeUp(weaponControl);
 
-            weaponControl.Location = game.WeaponInRoom.Location;
-            if (game.WeaponInRoom.PickedUp)
-                weaponControl.Visible = false;
-            else
-                weaponControl.Visible = true;
-            if (game.PlayerHitPoints <= 0)
-            {
-                MessageBox.Show("You died");
-                Application.Exit();
-            }
-            if (enemiesShown < 1)
-            {
-                MessageBox.Show("You have defeated the enemies on this level");
-                game.NewLevel(random);
-                UpdateCharacters();
-            }
+            ShowGamoOverMessageBox(enemiesShown);
         }
 
 
@@ -158,8 +96,8 @@ namespace Lab2
         {
             if (game.CheckPlayerInventory("Sword"))
             {
-                UpdateAttackButtons(InventoryType.Weapon);
                 game.Equip("Sword");
+                UpdateAttackButtons(InventoryType.Weapon);
                 RemovePicBoxBorders();
                 SwordInventoryPicBox.BorderStyle = BorderStyle.FixedSingle;
             }
@@ -169,8 +107,8 @@ namespace Lab2
         {
             if (game.CheckPlayerInventory("Bow"))
             {
-                UpdateAttackButtons(InventoryType.Weapon);
                 game.Equip("Bow");
+                UpdateAttackButtons(InventoryType.Weapon);
                 RemovePicBoxBorders();
                 BowInventoryPicBox.BorderStyle = BorderStyle.FixedSingle;
             }
@@ -180,8 +118,8 @@ namespace Lab2
         {
             if (game.CheckPlayerInventory("Mace"))
             {
-                UpdateAttackButtons(InventoryType.Weapon);
                 game.Equip("Mace");
+                UpdateAttackButtons(InventoryType.Weapon);
                 RemovePicBoxBorders();
                 MaceInventoryPicBox.BorderStyle = BorderStyle.FixedSingle;
             }
@@ -189,6 +127,7 @@ namespace Lab2
 
         private void PotionBlueInventoryPicBox_Click(object sender, EventArgs e)
         {
+            game.Equip("Blue Potion");
             UpdateAttackButtons(InventoryType.Potion);
             RemovePicBoxBorders();
             PotionBlueInventoryPicBox.BorderStyle = BorderStyle.FixedSingle;
@@ -197,6 +136,7 @@ namespace Lab2
 
         private void PotionRedInventoryPicBox_Click(object sender, EventArgs e)
         {
+            game.Equip("Red Potion");
             UpdateAttackButtons(InventoryType.Potion);
             RemovePicBoxBorders();
             PotionRedInventoryPicBox.BorderStyle = BorderStyle.FixedSingle;
@@ -224,7 +164,6 @@ namespace Lab2
         {
             game.Move(Direction.Right, random);
             UpdateCharacters();
-            Console.WriteLine("Hello");
         }
 
         private void UpAttackButton_Click(object sender, EventArgs e)
@@ -279,5 +218,113 @@ namespace Lab2
                     break;
             }
         }
+
+        private void SetVisibilityInventoryIcons()
+        {
+            SwordInventoryPicBox.Visible = game.CheckPlayerInventory("Sword");
+            BowInventoryPicBox.Visible = game.CheckPlayerInventory("Bow");
+            MaceInventoryPicBox.Visible = game.CheckPlayerInventory("Mace");
+            PotionBlueInventoryPicBox.Visible = game.CheckPlayerInventory("Blue Potion");
+            PotionRedInventoryPicBox.Visible = game.CheckPlayerInventory("Red Potion");
+        }
+
+        private Control SetControlVisiblityPicBoxes()
+        {
+            Control weaponControl = null;
+            switch (game.WeaponInRoom.Name)
+            {
+                case "Sword":
+                    weaponControl = SwordPicBox;
+                    break;
+                case "Bow":
+                    weaponControl = BowPicBox;
+                    break;
+                case "Mace":
+                    weaponControl = MacePicBox;
+                    break;
+                case "Red Potion":
+                    weaponControl = PotionRedPicBox;
+                    break;
+                case "Blue Potion":
+                    weaponControl = PotionBluePicBox;
+                    break;
+            }
+            weaponControl.Visible = true;
+            return weaponControl;
+        }
+
+        private void SetVisiblityPicBoxes()
+        {
+            SwordPicBox.Visible = false;
+            BowPicBox.Visible = false;
+            PotionRedPicBox.Visible = false;
+            PotionBluePicBox.Visible = false;
+            MacePicBox.Visible = false;
+        }
+
+        private void SetEnemyVisibility(bool showBat, bool showGhost, bool showGhoul)
+        {
+            if (!showBat)
+            {
+                BatPicBox.Visible = false;
+                BatHitPointsLabel.Text = "";
+            }
+            else
+            {
+                BatPicBox.Visible = true;
+            }
+
+            if (!showGhost)
+            {
+                GhostPicBox.Visible = false;
+                GhostHitPointsLabel.Text = "";
+            }
+            else
+            {
+                GhostPicBox.Visible = true;
+            }
+            if (!showGhoul)
+            {
+                GhoulPicBox.Visible = false;
+                GhoulHitPointsLabel.Text = "";
+            }
+            else
+            {
+                GhoulPicBox.Visible = true;
+            }
+
+        }
+
+        private void ShowGamoOverMessageBox(int enemiesShown)
+        {
+            if (game.PlayerHitPoints <= 0)
+            {
+                MessageBox.Show("You died");
+                Application.Exit();
+            }
+            if (enemiesShown < 1)
+            {
+                MessageBox.Show("You have defeated the enemies on this level");
+                game.NewLevel(random);
+                UpdateCharacters();
+            }
+        }
+
+        private void SetVisiblityPickeUp(Control weaponControl)
+        {
+            weaponControl.Location = game.WeaponInRoom.Location;
+            if (game.WeaponInRoom.PickedUp)
+                weaponControl.Visible = false;
+            else
+                weaponControl.Visible = true;
+        }
+
+        private void UpdatePlayer()
+        {
+            PlayerPicBox.Location = game.PlayerLocation;
+            PlayerHitPointsLabel.Text =
+            game.PlayerHitPoints.ToString();
+        }
+
     }
 }

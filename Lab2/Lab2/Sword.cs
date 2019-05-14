@@ -10,7 +10,7 @@ namespace Lab2
 {
     class Sword : Weapon
     {
-        private const int RADIUS = 10;
+        private const int RADIUS = 20;
         private const int DAMAGE = 3;
 
         public Sword(Game game, Point location): base(game, location)

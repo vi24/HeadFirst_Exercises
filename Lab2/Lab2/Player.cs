@@ -49,8 +49,9 @@ namespace Lab2
             base.location = Move(direction, game.Boundaries);
             if (!game.WeaponInRoom.PickedUp)
             {
-                if (game.WeaponInRoom.Nearby(this.Location, game.WeaponInRoom.Location, 1))
+                if (game.WeaponInRoom.Nearby(game.WeaponInRoom.Location, this.Location, 1))
                 {
+                    game.WeaponInRoom.PickUpWeapon();
                     this.inventory.Add(game.WeaponInRoom);
                     if(equippedWeapon is null)
                     {

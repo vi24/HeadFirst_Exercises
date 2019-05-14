@@ -33,7 +33,7 @@ namespace Lab2
                 }
                 if (NearPlayer())
                 {
-                    Hit(MAX_DAMAGE, random);
+                    game.HitPlayer(MAX_DAMAGE, random);
                 }
             }
         }

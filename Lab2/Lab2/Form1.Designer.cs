@@ -352,7 +352,6 @@
             this.PlayerPicBox.Location = new System.Drawing.Point(156, 112);
             this.PlayerPicBox.Name = "PlayerPicBox";
             this.PlayerPicBox.Size = new System.Drawing.Size(50, 50);
-            this.PlayerPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PlayerPicBox.TabIndex = 8;
             this.PlayerPicBox.TabStop = false;
             // 
@@ -363,7 +362,6 @@
             this.BatPicBox.Location = new System.Drawing.Point(218, 112);
             this.BatPicBox.Name = "BatPicBox";
             this.BatPicBox.Size = new System.Drawing.Size(50, 50);
-            this.BatPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.BatPicBox.TabIndex = 9;
             this.BatPicBox.TabStop = false;
             this.BatPicBox.Visible = false;
@@ -375,7 +373,6 @@
             this.GhostPicBox.Location = new System.Drawing.Point(280, 112);
             this.GhostPicBox.Name = "GhostPicBox";
             this.GhostPicBox.Size = new System.Drawing.Size(50, 50);
-            this.GhostPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.GhostPicBox.TabIndex = 10;
             this.GhostPicBox.TabStop = false;
             this.GhostPicBox.Visible = false;
@@ -387,7 +384,6 @@
             this.GhoulPicBox.Location = new System.Drawing.Point(342, 112);
             this.GhoulPicBox.Name = "GhoulPicBox";
             this.GhoulPicBox.Size = new System.Drawing.Size(50, 50);
-            this.GhoulPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.GhoulPicBox.TabIndex = 11;
             this.GhoulPicBox.TabStop = false;
             this.GhoulPicBox.Visible = false;
@@ -399,7 +395,6 @@
             this.PotionRedPicBox.Location = new System.Drawing.Point(404, 112);
             this.PotionRedPicBox.Name = "PotionRedPicBox";
             this.PotionRedPicBox.Size = new System.Drawing.Size(50, 50);
-            this.PotionRedPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PotionRedPicBox.TabIndex = 12;
             this.PotionRedPicBox.TabStop = false;
             this.PotionRedPicBox.Visible = false;
@@ -411,7 +406,6 @@
             this.PotionBluePicBox.Location = new System.Drawing.Point(466, 112);
             this.PotionBluePicBox.Name = "PotionBluePicBox";
             this.PotionBluePicBox.Size = new System.Drawing.Size(50, 50);
-            this.PotionBluePicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PotionBluePicBox.TabIndex = 13;
             this.PotionBluePicBox.TabStop = false;
             this.PotionBluePicBox.Visible = false;
@@ -419,11 +413,10 @@
             // SwordPicBox
             // 
             this.SwordPicBox.BackColor = System.Drawing.Color.Transparent;
-            this.SwordPicBox.Image = global::Lab2.Properties.Resources.sword;
+            this.SwordPicBox.Image = global::Lab2.Properties.Resources.sword1;
             this.SwordPicBox.Location = new System.Drawing.Point(528, 112);
             this.SwordPicBox.Name = "SwordPicBox";
             this.SwordPicBox.Size = new System.Drawing.Size(50, 50);
-            this.SwordPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.SwordPicBox.TabIndex = 14;
             this.SwordPicBox.TabStop = false;
             this.SwordPicBox.Visible = false;
@@ -435,7 +428,6 @@
             this.BowPicBox.Location = new System.Drawing.Point(590, 112);
             this.BowPicBox.Name = "BowPicBox";
             this.BowPicBox.Size = new System.Drawing.Size(50, 50);
-            this.BowPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.BowPicBox.TabIndex = 15;
             this.BowPicBox.TabStop = false;
             this.BowPicBox.Visible = false;
@@ -447,7 +439,6 @@
             this.MacePicBox.Location = new System.Drawing.Point(652, 112);
             this.MacePicBox.Name = "MacePicBox";
             this.MacePicBox.Size = new System.Drawing.Size(50, 50);
-            this.MacePicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.MacePicBox.TabIndex = 16;
             this.MacePicBox.TabStop = false;
             this.MacePicBox.Visible = false;
@@ -473,9 +464,9 @@
             this.Controls.Add(this.MaceInventoryPicBox);
             this.Controls.Add(this.BowInventoryPicBox);
             this.Controls.Add(this.SwordInventoryPicBox);
-            this.Controls.Add(this.MacePicBox);
-            this.Controls.Add(this.BowPicBox);
             this.Controls.Add(this.SwordPicBox);
+            this.Controls.Add(this.BowPicBox);
+            this.Controls.Add(this.MacePicBox);
             this.Name = "TheQuestForm";
             this.Text = "The Quest";
             this.Load += new System.EventHandler(this.TheQuestForm_Load);
