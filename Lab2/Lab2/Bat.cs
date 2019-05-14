@@ -18,11 +18,11 @@ namespace Lab2
         {
             if (HitPoints > 0)
             {
-                int rand = random.Next(1, 2);
+                int rand = random.Next(1, 3);
                 switch (rand)
                 {
                     case 1:
-                        Move(FindPlayerDirection(game.PlayerLocation), game.Boundaries);
+                        location = Move(FindPlayerDirection(game.PlayerLocation), game.Boundaries);
                         break;
                     case 2:
                         location = Move((Direction)random.Next(3), game.Boundaries);

@@ -9,6 +9,8 @@ namespace Lab2
 {
     class BluePotion : Weapon, IPotion
     {
+        private const int HEALTH = 5;
+        private bool _used;
         public BluePotion(Game game, Point location) : base(game, location)
         {
         }
@@ -21,11 +23,18 @@ namespace Lab2
             }
         }
 
-        public bool Used { get; }
+        public bool Used
+        {
+            get
+            {
+                return _used;
+            }
+        }
 
         public override void Attack(Direction direction, Random random)
         {
-            throw new NotImplementedException();
+            game.IncreasePlayerHealth(HEALTH, random);
+            _used = true;
         }
 
         

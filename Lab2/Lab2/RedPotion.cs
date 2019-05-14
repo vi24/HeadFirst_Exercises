@@ -9,11 +9,19 @@ namespace Lab2
 {
     class RedPotion : Weapon, IPotion
     {
+        private const int HEALTH = 10;
+        private bool _used;
         public RedPotion(Game game, Point location) : base(game, location)
         {
         }
 
-        public bool Used { get; }
+        public bool Used
+        {
+            get
+            {
+                return _used;
+            }
+        }
 
         public override string Name
         {
@@ -26,7 +34,8 @@ namespace Lab2
 
         public override void Attack(Direction direction, Random random)
         {
-            throw new NotImplementedException();
+            game.IncreasePlayerHealth(HEALTH, random);
+            _used = true;
         }
     }
 }

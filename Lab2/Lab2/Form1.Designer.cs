@@ -91,6 +91,7 @@
             this.SwordInventoryPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.SwordInventoryPicBox.TabIndex = 0;
             this.SwordInventoryPicBox.TabStop = false;
+            this.SwordInventoryPicBox.Click += new System.EventHandler(this.SwordInventoryPicBox_Click);
             // 
             // BowInventoryPicBox
             // 
@@ -102,6 +103,7 @@
             this.BowInventoryPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.BowInventoryPicBox.TabIndex = 1;
             this.BowInventoryPicBox.TabStop = false;
+            this.BowInventoryPicBox.Click += new System.EventHandler(this.BowInventoryPicBox_Click);
             // 
             // MaceInventoryPicBox
             // 
@@ -113,6 +115,7 @@
             this.MaceInventoryPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.MaceInventoryPicBox.TabIndex = 2;
             this.MaceInventoryPicBox.TabStop = false;
+            this.MaceInventoryPicBox.Click += new System.EventHandler(this.MaceInventoryPicBox_Click);
             // 
             // PotionBlueInventoryPicBox
             // 
@@ -124,6 +127,7 @@
             this.PotionBlueInventoryPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PotionBlueInventoryPicBox.TabIndex = 3;
             this.PotionBlueInventoryPicBox.TabStop = false;
+            this.PotionBlueInventoryPicBox.Click += new System.EventHandler(this.PotionBlueInventoryPicBox_Click);
             // 
             // PotionRedInventoryPicBox
             // 
@@ -135,6 +139,7 @@
             this.PotionRedInventoryPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PotionRedInventoryPicBox.TabIndex = 4;
             this.PotionRedInventoryPicBox.TabStop = false;
+            this.PotionRedInventoryPicBox.Click += new System.EventHandler(this.PotionRedInventoryPicBox_Click);
             // 
             // MoveGroupBox
             // 
@@ -158,6 +163,7 @@
             this.UpMoveButton.TabIndex = 20;
             this.UpMoveButton.Text = "↑";
             this.UpMoveButton.UseVisualStyleBackColor = true;
+            this.UpMoveButton.Click += new System.EventHandler(this.UpMoveButton_Click);
             // 
             // RightMoveButton
             // 
@@ -167,6 +173,7 @@
             this.RightMoveButton.TabIndex = 19;
             this.RightMoveButton.Text = "→";
             this.RightMoveButton.UseVisualStyleBackColor = true;
+            this.RightMoveButton.Click += new System.EventHandler(this.RightMoveButton_Click);
             // 
             // DownMoveButton
             // 
@@ -176,6 +183,7 @@
             this.DownMoveButton.TabIndex = 18;
             this.DownMoveButton.Text = "↓";
             this.DownMoveButton.UseVisualStyleBackColor = true;
+            this.DownMoveButton.Click += new System.EventHandler(this.DownMoveButton_Click);
             // 
             // LeftMoveButton
             // 
@@ -185,6 +193,7 @@
             this.LeftMoveButton.TabIndex = 17;
             this.LeftMoveButton.Text = "←";
             this.LeftMoveButton.UseVisualStyleBackColor = true;
+            this.LeftMoveButton.Click += new System.EventHandler(this.LeftMoveButton_Click);
             // 
             // AttackGroupBox
             // 
@@ -208,6 +217,7 @@
             this.DownAttackButton.TabIndex = 24;
             this.DownAttackButton.Text = "↓";
             this.DownAttackButton.UseVisualStyleBackColor = true;
+            this.DownAttackButton.Click += new System.EventHandler(this.DownAttackButton_Click);
             // 
             // RightAttackButton
             // 
@@ -217,6 +227,7 @@
             this.RightAttackButton.TabIndex = 23;
             this.RightAttackButton.Text = "→";
             this.RightAttackButton.UseVisualStyleBackColor = true;
+            this.RightAttackButton.Click += new System.EventHandler(this.RightAttackButton_Click);
             // 
             // UpAttackButton
             // 
@@ -226,6 +237,7 @@
             this.UpAttackButton.TabIndex = 22;
             this.UpAttackButton.Text = "↑";
             this.UpAttackButton.UseVisualStyleBackColor = true;
+            this.UpAttackButton.Click += new System.EventHandler(this.UpAttackButton_Click);
             // 
             // LeftAttackButton
             // 
@@ -235,6 +247,7 @@
             this.LeftAttackButton.TabIndex = 21;
             this.LeftAttackButton.Text = "←";
             this.LeftAttackButton.UseVisualStyleBackColor = true;
+            this.LeftAttackButton.Click += new System.EventHandler(this.LeftAttackButton_Click);
             // 
             // HitPointsTableLayoutPanel
             // 
@@ -342,7 +355,6 @@
             this.PlayerPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PlayerPicBox.TabIndex = 8;
             this.PlayerPicBox.TabStop = false;
-            this.PlayerPicBox.Visible = false;
             // 
             // BatPicBox
             // 

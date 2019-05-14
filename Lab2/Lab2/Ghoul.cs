@@ -18,7 +18,7 @@ namespace Lab2
         {
             if(HitPoints > 0)
             {
-                int rand = random.Next(1, 3);
+                int rand = random.Next(1, 4);
 
                 switch (rand)
                 {
