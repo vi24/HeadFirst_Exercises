@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Lab2.GameControls;
 
-namespace Lab2
+namespace Lab2.Movers.Weapons.Impl
 {
-    class Mace : Weapon
+    public class Mace : Weapon
     {
         private const int RADIUS = 20;
         private const int DAMAGE = 6;
@@ -15,14 +12,7 @@ namespace Lab2
         public Mace(Game game, Point location) : base(game, location)
         {}
 
-        public override string Name
-        {
-            get
-            {
-                return "Mace";
-            }
-
-        }
+        public override string Name => "Mace";
 
         public override void Attack(Direction direction, Random random)
         {
